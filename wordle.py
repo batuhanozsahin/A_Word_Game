@@ -2,9 +2,10 @@ import sys
 
 WoD = sys.argv[1].lower()
 counter = 0
+success = False
 
 while counter < 6:
-    guess = input("Please enter a five letter word: ").lower()
+    guess = input("Please enter a five-letter word: ").lower()
     counter += 1
 
     if len(guess) != 5:
@@ -13,6 +14,7 @@ while counter < 6:
 
     if guess == WoD:
         print(f"Congratulations! You guessed right in {counter} try!")
+        success = True
         break
 
     for i in range(5):
@@ -23,4 +25,5 @@ while counter < 6:
         else:
             print(f"{i+1}. letter does not exist.")
 
-print("You failed!")
+if not success:
+    print("You failed!")
