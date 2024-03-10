@@ -1,10 +1,10 @@
 import sys
 
-WoD = sys.argv[1]
+WoD = sys.argv[1].lower()
 counter = 0
 
 while counter < 6:
-    guess = input("Please enter a five letter word: ")
+    guess = input("Please enter a five letter word: ").lower()
     counter += 1
 
     if len(guess) != 5:
